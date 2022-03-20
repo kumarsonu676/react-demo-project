@@ -1,0 +1,16 @@
+.nav-link.active {
+  color: #f00 !important;
+}
+
+.invalid {
+  border: solid 1px #f00;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.form-control.invalid:focus {
+  box-shadow: none;
+  border: solid 1px #f00;
+}
