@@ -1,5 +1,7 @@
 import axios from "axios";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import AuthContext from "../../../store/auth-context";
 
 import Meta from "../shared/Meta";
 import PrivacyPolicy from "./PrivacyPolicy";
@@ -10,6 +12,8 @@ export default function Contact() {
     formState: { errors },
     handleSubmit,
   } = useForm();
+
+  const authContext = useContext(AuthContext);
 
   function submitData(data) {
     console.log(data);
@@ -44,7 +48,7 @@ export default function Contact() {
       <h1 className="text-center">Contact Us</h1>
 
       <button className="btn btn-success" onClick={getTodoItems}>
-        Get TODO
+        Get TODO {authContext.ctxUserName}
       </button>
 
       <div className="row">
